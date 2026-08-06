@@ -7,17 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="name">EL </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contacts">Contacts</a></li>
+    <header class="header-container">
+        <!-- Effet de halo néon -->
+        <div class="header-glow"></div>
+
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <div class="logo-box">EL</div>
+            <span class="logo-text">Portfolio<span class="dot">.</span></span>
+        </a>
+
+        <!-- Navigation (Conteneur du Menu Mobile) -->
+        <nav class="nav-container" id="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link"><i class="fa-regular fa-user"></i> <span>À propos</span></a></li>
+                <li><a href="#projets" class="nav-link"><i class="fa-solid fa-code"></i> <span>Projets</span></a></li>
+                <li><a href="#skills" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Skills</span></a></li>
+                <li><a href="#contacts" class="nav-link"><i class="fa-regular fa-envelope"></i> <span>Contact</span></a></li>
             </ul>
+
+            <!-- Bouton CTA dans le menu sur mobile -->
+            <div class="cta-wrapper">
+                <button class="btn-subscribe">
+                    <span class="btn-shine"></span>
+                    <i class="fa-solid fa-bolt icon-pulse"></i>
+                    <span>Rejoindre 340k+ Subscribers</span>
+                </button>
+            </div>
         </nav>
-        <button>join 340k+ Subscribers</button>
+
+        <!-- Bouton Menu Burger (Mobile seulement) -->
+        <button class="burger-btn" id="burger-btn" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </header>
+
+    <!-- Overlay sombre pour fermer le menu en cliquant en dehors -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
