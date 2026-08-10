@@ -312,13 +312,99 @@ body {
     50% { opacity: 0.4; }
 }
 
-/* Titre */
+/* --- Conteneur parent divisé en 2 parts égales (50% / 50%) --- */
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* 1. Photo avec cadre à GAUCHE (50%) */
+.profil {
+    flex: 1;
+    order: 1; /* Force l'alignement à gauche */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px; /* Permet à la tête de dépasser vers le haut */
+}
+
+/* 2. Titre à DROITE (50%) */
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    flex: 1;
+    order: 2; /* Force l'alignement à droite */
+    text-align: left;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
     font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 1.2rem;
+    line-height: 1.2;
     letter-spacing: -0.02em;
+    margin-bottom: 0;
+}
+
+/* --- Style de la Photo & du Cadre Arrondi --- */
+.avatar-card {
+    position: relative;
+    width: 240px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Le Cadre Arrondi lumineux (derrière) */
+.avatar-frame {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 85%;
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    border-radius: 100px; /* Coins du cadre bien arrondis */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(0, 242, 254, 0.3);
+    z-index: 1;
+}
+
+/* La Photo Arrondie (au-dessus) avec la tête qui dépasse */
+.avatar-img {
+    position: relative;
+    z-index: 2;
+    width: 220px;
+    height: 310px; /* Plus haute pour sortir par le haut du cadre */
+    object-fit: cover;
+    object-position: top center; /* Maintient le haut de la tête bien visible */
+    border-radius: 200px; /* Photo aux coins arrondis */
+    transition: transform 0.4s ease;
+}
+
+/* Effets interactifs au survol */
+.avatar-card:hover .avatar-img {
+    transform: translateY(-8px) scale(1.03);
+}
+
+.avatar-card:hover .avatar-frame {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+                0 0 35px rgba(0, 242, 254, 0.5);
+}
+
+/* --- Adaptation Mobile (Écrans réduits) --- */
+@media (max-width: 768px) {
+    .parent {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profil {
+        order: 1; /* Garde la photo en haut sur mobile */
+    }
+
+    .hero-title {
+        order: 2; /* Place le titre juste en dessous */
+        text-align: center;
+    }
 }
 
 .text-gradient {
