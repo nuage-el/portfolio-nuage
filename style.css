@@ -1,10 +1,10 @@
 :root {
-    --bg-dark: #0a0f1d;
-    --primary: #00f2fe;
-    --secondary: #4facfe;
-    --accent: #7928ca;
+    --bg-dark: #060c1f;
+    --primary: #da2c0eb0;
+    --secondary: #226aa5d3;
+    --accent: #0955b9;
     --text-light: #f1f5f9;
-    --text-muted: #94a3b8;
+    --text-muted: #375c8f;
     --glass-bg: rgba(15, 23, 42, 0.75);
     --glass-border: rgba(255, 255, 255, 0.12);
 }
@@ -39,7 +39,7 @@ body {
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 40px rgba(43, 0, 0, 0.753);
     z-index: 1000;
 }
 
@@ -121,7 +121,7 @@ body {
 
 .nav-link:hover {
     color: #fff;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(200, 255, 255, 0.05);
 }
 
 /* Bouton CTA */
@@ -364,7 +364,7 @@ body {
     border: 2px solid var(--glass-border);
     border-radius: 100px; /* Coins du cadre bien arrondis */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
-                0 0 25px rgba(0, 242, 254, 0.3);
+                0 0 25px rgba(1, 11, 94, 0.945);
     z-index: 1;
 }
 
